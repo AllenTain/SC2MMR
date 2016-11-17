@@ -9,13 +9,14 @@
     <th>Points</th>
     <th>Latest Match</th>
   </tr>
-<% @ladder_data["ladderMembers"].each do |player| %>
+<% @ladder_data["ladderMembers"].each_with_index do |player, i| %>
   <tr>
-    <td></td>
+    <td><%= i + 1 %></td>
     <td><%= region(player["character"]["realm"])%></td>
     <td><%= player["character"]["displayName"]%></td>
     <td><%= player["favoriteRaceP1"]%></td>
     <td><%= player["wins"]%>/<%= player["losses"]%></td>
+    <td><%= ratio(player) %></td>
     <td><%= player["points"]%></td>
     <td></td>
   </tr>

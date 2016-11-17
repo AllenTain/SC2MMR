@@ -13,6 +13,7 @@ class UrlApi
   API_URL2 = "https://#{region}.api.battle.net/sc2/ladder/#{ladder_id}?locale=#{lang}&apikey=#{key}"
   
   def ladder_data
-    JSON.parse(HTTParty.get(API_URL).body)
+    JSON.parse(HTTParty.get(API_URL2).body)
   end
+
 end
