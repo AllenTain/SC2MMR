@@ -10,9 +10,9 @@ class UrlApi
   lang = "en_US"
   ladder_id = "187626"
   API_URL = "https://#{region}.api.battle.net/data/sc2/league/#{season}/#{match_type}/0/#{league}?access_token=#{token}"
-  API_URL = "https://#{region}.api.battle.net/sc2/ladder/#{ladder_id}?locale=#{lang}&apikey=#{key}"
+  API_URL2 = "https://#{region}.api.battle.net/sc2/ladder/#{ladder_id}?locale=#{lang}&apikey=#{key}"
   
-  def unique_url
-    return HTTParty.get(API_URL)
+  def ladder_data
+    JSON.parse(HTTParty.get(API_URL).body)
   end
 end

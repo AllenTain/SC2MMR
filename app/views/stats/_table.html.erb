@@ -1,0 +1,23 @@
+<table>
+  <tr>
+    <th>Rank</th>
+    <th>Region</th>
+    <th>Name</th>
+    <th>Race</th>
+    <th>Wins/Losses</th>
+    <th>Ratio</th>
+    <th>Points</th>
+    <th>Latest Match</th>
+  </tr>
+<% @ladder_data["ladderMembers"].each do |player| %>
+  <tr>
+    <td></td>
+    <td><%= region(player["character"]["realm"])%></td>
+    <td><%= player["character"]["displayName"]%></td>
+    <td><%= player["favoriteRaceP1"]%></td>
+    <td><%= player["wins"]%>/<%= player["losses"]%></td>
+    <td><%= player["points"]%></td>
+    <td></td>
+  </tr>
+<% end %>
+</table>
