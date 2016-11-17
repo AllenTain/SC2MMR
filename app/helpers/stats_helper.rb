@@ -11,4 +11,12 @@ module StatsHelper
   def ratio(player)
     "#{((player['wins']/(player['wins'] + player['losses']).to_f) * 100).round }%"
   end
+
+  def clanName(player)
+    if player["character"]["clanTag"] == ""
+      ""
+    else
+      "[#{player['character']['clanTag']}]"
+    end
+  end
 end

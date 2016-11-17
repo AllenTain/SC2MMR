@@ -12,8 +12,8 @@
 <% @ladder_data["ladderMembers"].each_with_index do |player, i| %>
   <tr>
     <td><%= i + 1 %></td>
-    <td><%= region(player["character"]["realm"])%></td>
-    <td><%= player["character"]["displayName"]%></td>
+    <td><%= region(player['character']['realm'])%></td>
+    <td><%= clanName(player) + player["character"]["displayName"]%></td>
     <td><%= player["favoriteRaceP1"]%></td>
     <td><%= player["wins"]%>/<%= player["losses"]%></td>
     <td><%= ratio(player) %></td>
