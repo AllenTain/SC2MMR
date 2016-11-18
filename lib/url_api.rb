@@ -9,12 +9,12 @@ class UrlApi
     if region2.nil?
       region2 = "eu"
     end
-    url = "https://#{region2}.api.battle.net/sc2/ladder/#{ladder_id(region2)}?locale=en_US&apikey=pcp7t55mgb3fznkw83qje72xjzsfnhnd"
+    url = "https://#{region2}.api.battle.net/data/sc2/ladder/#{ladder_id(region2)}?access_token=gkxw63q8u6rspxhnt67hpywp"
     JSON.parse(HTTParty.get(url).body)
   end
 
   def ladder_id(region)
-    league = "6"
+    league = "5"
     gm_region = "https://#{region}.api.battle.net/data/sc2/league/29/201/0/#{league}?access_token=gkxw63q8u6rspxhnt67hpywp"
     JSON.parse(HTTParty.get(gm_region).body)["tier"].first["division"].first["ladder_id"]
   end

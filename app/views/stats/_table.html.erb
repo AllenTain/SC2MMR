@@ -1,23 +1,21 @@
 <table>
   <tr>
     <th>Rank</th>
-    <th>Region</th>
+    <th>MMR</th>
     <th>Name</th>
-    <th>Race</th>
-    <th>Wins/Losses</th>
+    <th>W|L|D</th>
     <th>Ratio</th>
-    <th>Points</th>
+    <th>Longest Win Streak</th>
     <th>Latest Match</th>
   </tr>
-<% @ladder_data["ladderMembers"].each_with_index do |player, i| %>
+<% @players.each_with_index do |player, i| %>
   <tr>
     <td><%= i + 1 %></td>
-    <td><%= region(player['character']['realm'])%></td>
-    <td><%= clanName(player) + player["character"]["displayName"]%></td>
-    <td><%= player["favoriteRaceP1"]%></td>
-    <td><%= player["wins"]%>/<%= player["losses"]%></td>
+    <td><%= player["rating"] %></td>
+    <td><%= race(player) %><%= name(player) %></td>
+    <td><%= win_loss_draw(player) %></td>
     <td><%= ratio(player) %></td>
-    <td><%= player["points"]%></td>
+    <td><%= player["longest_win_streak"] %></td>
     <td></td>
   </tr>
 <% end %>
