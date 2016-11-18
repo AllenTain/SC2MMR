@@ -2,6 +2,7 @@
   <tr>
     <th>Rank</th>
     <th>MMR</th>
+    <th>Race</th>
     <th>Name</th>
     <th>W|L|D</th>
     <th>Ratio</th>
@@ -12,7 +13,8 @@
   <tr>
     <td><%= i + 1 %></td>
     <td><%= player["rating"] %></td>
-    <td><%= race(player) %><%= name(player) %></td>
+    <td><%= race(player) %> </td>
+    <td><%= name(player) %> </td>
     <td><%= win_loss_draw(player) %></td>
     <td><%= ratio(player) %></td>
     <td><%= player["longest_win_streak"] %></td>

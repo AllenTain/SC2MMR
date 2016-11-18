@@ -36,6 +36,8 @@ module StatsHelper
       image_tag("zerg_icon.png")
     when "Protoss"
       image_tag("protoss_icon.png")
+    when "Random"
+      image_tag("random_icon.png")
     end
   end
 end
