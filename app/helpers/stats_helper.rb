@@ -9,7 +9,11 @@ module StatsHelper
   end
 
   def name(player)
-    player["member"].first["legacy_link"]["name"].split("#").first
+    if !player["member"].first["legacy_link"]["name"].nil?
+      player["member"].first["legacy_link"]["name"].split("#").first
+    else
+      ""
+    end
   end
 
   def ratio(player)

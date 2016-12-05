@@ -1,6 +1,4 @@
-<form>
-  <input type="text" name="search" placeholder="Search Name"/>
-  <input type="Submit" value="us" name="region"/>
-  <input type="Submit" value="eu" name="region"/>
-  <input type="Submit" value="kr" name="region"/>
-</form>
+<%= form_tag root_path method: :get, class: "js-region-select" do %>
+<%= select_tag "region", options_for_select(["us", "kr", "eu"], "us")%>
+<% end %>
+
