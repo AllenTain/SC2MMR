@@ -1,4 +1,5 @@
-<%= form_tag root_path method: :get, class: "js-region-select" do %>
-<%= select_tag "region", options_for_select(["us", "kr", "eu"], "us")%>
+<%= form_tag root_path, method: :get, class: "js-region-select" do %>
+Region: <%= select_tag "region", options_for_select(["US", "KR", "EU"], @region)%>
+League: <%= select_tag "league", options_for_select(["Grandmaster", "Masters", "Diamond", "Platinum", "Gold", "Silver", "Bronze"], @league)%>
 <% end %>
 
